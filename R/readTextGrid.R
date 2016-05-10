@@ -4,7 +4,11 @@ readTextGrid <- function(file, format = "R") {
   ctx$source(system.file("js/TextGridtoJSON.min.js",
                          package = "phonpack"))
 
-  tg <- paste0(readLines(file), collapse = "\n")
+  tg_lines <- tryCatch(readLines(file),
+                       error = function(e) { stop(paste0("Error! Can't read ", file, ". Is the encoding UTF-8?")) },
+                       warning = function(w) { stop(paste0("Error! Can't read ", file, ". Is the encoding UTF-8?")) })
+
+  tg <- paste0(tg_lines, collapse = "\n")
 
   data <- ctx$call("TextGridtoJSON", tg)
 
