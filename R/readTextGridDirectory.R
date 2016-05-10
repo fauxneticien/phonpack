@@ -1,5 +1,9 @@
-readTextGridDirectory <- function(dir, sources = TRUE, ...) {
-  file_list <- list.files(dir, pattern = ".TextGrid$", full.names = TRUE, ...)
+readTextGridDirectory <- function(dir = ".", sources = TRUE, ...) {
+  file_list <- list.files(dir, pattern = "\\.[tT]ext[gG]rid$", full.names = TRUE, ...)
+
+  if(identical(character(0), file_list)) {
+    stop("No TextGrid files found in directory.")
+  }
 
   return_list <- list()
 
