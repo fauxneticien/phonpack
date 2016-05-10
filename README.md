@@ -1,4 +1,5 @@
-# phonpack
+### phonpack
+#### [ˈfʌnpak]
 A package of fun(ctions) for doing phonetics in R
 
 Version 0.0.0.9000
