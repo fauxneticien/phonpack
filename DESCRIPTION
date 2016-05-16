@@ -9,4 +9,6 @@ LazyData: true
 Depends: 
 	V8,
 	jsonlite,
-	dplyr
+	dplyr,
+	readr,
+	stringi
