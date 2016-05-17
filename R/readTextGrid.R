@@ -1,3 +1,13 @@
+#' Read in data from a Praat TextGrid file
+#'
+#' Read data from a TextGrid file into R
+#' @param file a character string of the filename to read
+#' @param format optional. A character string "R" (default) or "JSON" of the data format to be returned.
+#' @export
+#' @examples
+#' readTextGrid("my_tg.TextGrid")
+#' readTextGrid("path/to/textgrids/thisfile.TextGrid")
+
 readTextGrid <- function(file, format = "R") {
 
   ctx <- v8()

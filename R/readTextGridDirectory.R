@@ -1,3 +1,15 @@
+#' Read in data from all Praat TextGrid files within a directory
+#'
+#' The function finds all .TextGrid or .textgrid (case insensitive) files within a directory and returns a list of the TextGrid data
+#' @param dir Optional. The directory to read in. Default is the current working directory.
+#' @param sources boolean TRUE (default) or FALSE - whether to append a 'source' column to each TextGrid data with its filename
+#' @export
+#' @examples
+#' readTextGridDirectory("/path/to/dir")
+#'
+#' # Read all TextGrid files in current working directory
+#' readTextGridDirectory()
+
 readTextGridDirectory <- function(dir = ".", sources = TRUE, ...) {
   file_list <- list.files(dir, pattern = "\\.[tT]ext[gG]rid$", full.names = TRUE, ...)
 
