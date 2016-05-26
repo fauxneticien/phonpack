@@ -4,12 +4,12 @@
 \alias{getTierIntervals}
 \title{Retrieve all Intervals from an Interval Tier}
 \usage{
-getTierIntervals(interval_tier, discard_empty = TRUE)
+getTierIntervals(interval_tier, discard_empty = FALSE)
 }
 \arguments{
 \item{interval_tier}{an IntervalTier returned from getTierByName() or getTierByNumber()}
 
-\item{discard_empty}{boolean TRUE (default) or false. Indicates whether intervals with no text in them should be discarded.}
+\item{discard_empty}{boolean FALSE (default) or TRUE. Indicates whether intervals with no text in them should be discarded in selection.}
 }
 \description{
 This function returns a data frame of the Intervals from an Interval Tier.
