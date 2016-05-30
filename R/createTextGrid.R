@@ -31,5 +31,20 @@ createTextGrid <- function(xmin, xmax, tier_names, point_tiers) {
     ret_list
   }) -> new_list
 
-  list(item = new_list)
+    blank_tg <- list(item = new_list)
+
+    # Validate the structure, make sure you can pass it back and forth
+    # If it fails here, everything is useless
+    ctx <- v8()
+    ctx$source(system.file("js/JSONtoTextGrid.min.js",
+                           package = "phonpack"))
+
+    ctx$source(system.file("js/TextGridtoJSON.min.js",
+                           package = "phonpack"))
+
+    tg_str <- ctx$call("JSONtoTextGrid", blank_tg)
+    tg_str <- ctx$call("TextGridtoJSON", tg_str)
+
+    tg_str
+
 }
