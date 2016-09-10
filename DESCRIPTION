@@ -1,14 +1,16 @@
 Package: phonpack
 Title: A package of helper functions for doing phonetics
 Version: 0.0.0.9000
-Authors@R: person("Nay", "San", email = "nay.san@example.com", role = c("aut", "cre"))
+Authors@R: person("Nay", "San", email = "nay.san@mq.edu.au", role = c("aut", "cre"))
 Description: This is a collection of helper functions for doing phonetics.
 Depends:
     V8,
     jsonlite,
     dplyr,
     readr,
-    stringi
+    stringi,
+    stringr,
+    purrr
 License: MIT
 LazyData: true
 RoxygenNote: 5.0.1
