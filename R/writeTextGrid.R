@@ -19,6 +19,6 @@ writeTextGrid <- function(tg, file) {
 
   tg_str <- ctx$call("JSONtoTextGrid", tg)
 
-  writeLines(tg_str, file)
+  write_lines(tg_str, file)
 
 }
